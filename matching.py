@@ -12,6 +12,12 @@ Surnames = Surnames['Фамилия'].tolist()
 From = random.sample(Surnames, len(Surnames))
 To = random.sample(Surnames, len(Surnames))
 
+# check that random works
+for i in range(len(Surnames)):
+    if (From[i] == To[i]):
+        print("Random sucks, re-run!")
+        break
+
 FromToSheet = pandas.DataFrame({"From": From, "To": To})
 
 # print(FromToSheet)
