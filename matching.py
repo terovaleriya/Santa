@@ -16,7 +16,7 @@ To = random.sample(Surnames, len(Surnames))
 for i in range(len(Surnames)):
     if (From[i] == To[i]):
         print("Random sucks, re-run!")
-        break
+        exit(1)
 
 FromToSheet = pandas.DataFrame({"From": From, "To": To})
 
