@@ -70,11 +70,12 @@ for i in range(len(froms)):
     # the text will be emailed
     text = "Привет, " + From.name + "!\n\n"
     text += "Твоего подопечного зовут " + To.name + " " + To.surname + ". "
-    text += "Он учится на " + To.year[0] + " курсе"
-    if len(To.year.split()) == 2:
-        text += " магистратуры"
-    text += ".\n"
-    text += "Вот, что он оставил в качестве пожелания: " + "\"" + To.wish + "\"." + "\n" + "Его адрес: " + To.address + ", " + To.index + ".\n"
+    if not (isNaN(To.year)):
+        text += "Он учится на " + To.year[0] + " курсе"
+        if len(To.year.split()) == 2:
+            text += " магистратуры"
+        text += "."
+    text += "\nВот, что он оставил в качестве пожелания: " + "\"" + To.wish + "\"." + "\n" + "Его адрес: " + To.address + ", " + To.index + ".\n"
     if not (isNaN(To.social)):
         text += "Ссылка на социальную сеть: " + To.social + ".\n"
     else:
@@ -84,7 +85,7 @@ for i in range(len(froms)):
     message['Subject'] = Header('Твой подопечный!', 'utf-8')
     message['From'] = your_email
 
-    # print(text)
+    print(text)
 
     # # UNCOMMENT TO SEND
     # # sending the email
