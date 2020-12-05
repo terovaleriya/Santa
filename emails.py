@@ -85,7 +85,7 @@ for i in range(len(froms)):
     message['Subject'] = Header('Твой подопечный!', 'utf-8')
     message['From'] = your_email
 
-    print(text)
+    # print(text)
 
     # # UNCOMMENT TO SEND
     # # sending the email
